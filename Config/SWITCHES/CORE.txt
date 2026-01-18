@@ -1,0 +1,16 @@
+system-view
+sysname Core
+
+vlan batch 100 200
+
+interface g0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+ quit
+
+interface Ethernet0/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+ quit
+
+

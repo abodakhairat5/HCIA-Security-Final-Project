@@ -1,0 +1,20 @@
+system-view
+sysname Access
+
+vlan batch 100 200
+
+interface g0/0/3
+ port link-type access
+ port trunk pvid vlan 100
+ port trunk allow-pass vlan 100 200
+ quit
+interface g0/0/4
+ port link-type access
+ port trunk pvid vlan 100
+ port trunk allow-pass vlan 100 200
+ quit
+
+interface g0/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+
